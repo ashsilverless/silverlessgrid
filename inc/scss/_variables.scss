@@ -17,3 +17,11 @@ $fastEffect: all .5s ease;
 $slowEffect: all 1s ease;
 
 $gutter: 0.5em;
+$columns: 12;
+
+$breakpoints: (
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);

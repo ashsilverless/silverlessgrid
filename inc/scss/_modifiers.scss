@@ -1,5 +1,93 @@
 /*! == MODIFIERS == */
 
+/* Flex Containers */
+
+$columnWidth:         (calc(100% + #{$gutter * 2}) / $columns);
+$columnWidthNoGutter: (calc(100% + 0em) / $columns);
+
+@function get-width($width) {
+	$column: calc(#{$columnWidth} * #{$width} - #{$gutter * 2});
+	@return $column;
+}
+
+@function get-width-no-gutter($width) {
+	$column: calc(#{$columnWidthNoGutter} * #{$width});
+	@return $column;
+}
+
+@for $i from 1 through $columns {
+	.cols-#{$i} {
+	
+		$j: ($i - 1);
+		
+		@if $i == 1 {
+			$j: 0;
+		}
+		
+		> div {
+			&:nth-of-type(#{$i}n - #{$j}) {
+				margin-left: 0;
+			}
+			
+			&:nth-of-type(#{$i}n) {
+				margin-right: 0;
+			}
+		}
+	}
+  
+	.col-#{$i} {
+		margin-left: $gutter;
+		margin-right: $gutter;
+		flex: 0 0 get-width($i);
+	}
+	
+	.no-gutter {
+		
+		> .col-#{$i} {
+			margin-left: 0;
+			margin-right: 0;
+			flex: 0 0 get-width-no-gutter($i);
+		}
+	}
+}
+
+@each $name, $size in $breakpoints {
+	
+	@media (min-width: #{$size}) {
+		
+		@for $i from 1 through $columns {
+			
+			.cols-#{$name}-#{$i} {
+			
+				$j: ($i - 1);
+				
+				@if $i == 1 {
+					$j: 0;
+				}
+				
+				> div {
+					&:nth-of-type(n) {
+						margin-left: $gutter;
+						margin-right: $gutter;
+					}
+					
+					&:nth-of-type(#{$i}n - #{$j}) {
+						margin-left: 0;
+					}
+					
+					&:nth-of-type(#{$i}n) {
+						margin-right: 0;
+					}
+				}
+			}
+			
+			.col-#{$name}-#{$i} {
+				flex: 0 0 get-width($i);
+			}
+		}
+	}
+}
+
 /* Position */
 
 /* 
@@ -18,10 +106,10 @@ $sides: (top, bottom, left, right); // Sides var
         .p#{str-slice($side, 0, 1)}#{$amount} {
             padding-#{$side}: #{$amount}em;
         }
-        .col-m#{str-slice($side, 0, 1)}#{$amount} .col { 
+        .col-m#{str-slice($side, 0, 1)}#{$amount} > div[class^='col-'] { 
             margin-#{$side}: #{$amount}em;
         }
-        .col-p#{str-slice($side, 0, 1)}#{$amount} .col {
+        .col-p#{str-slice($side, 0, 1)}#{$amount} > div[class^='col-'] {
             padding-#{$side}: #{$amount}em;
         }
     }
