@@ -13,15 +13,14 @@ $brand-font: 'Big Caslon FB', serif;
 $body-font: 'Noto Sans', sans-serif;
 $supporting-font: 'Noto Sans', sans-serif;
 
-$fastEffect: all .5s ease;
-$slowEffect: all 1s ease;
-
-$gutter: 0.5em;
-$columns: 12;
+$container-width: 1400px;
+$col-count: 12;
+$grid-gap: 1em;
 
 $breakpoints: (
-	sm: 576px,
-	md: 768px,
+	xl: 1200px,
 	lg: 992px,
-	xl: 1200px
+	md: 768px,
+	sm: 576px,
+	xs: 350px
 );

@@ -6,7 +6,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <title>Silverless Grid</title>
-    <meta name="author" content="Codrops" />
     <link rel="stylesheet" type="text/css" href="style.css" />
     
     <style>
@@ -27,140 +26,38 @@
 		    background: #e4d463 !important;
 	    }
 	    
+	    .check-line {
+    	    position: relative;
+	    }
+	    
+        .check-line:after {
+            content: '';
+            position:absolute;
+            right:-0.5em;
+            height: 100vh;
+            width: 1px;
+            background: grey;
+        }	    
+	    
 	</style>
 </head>
 
 <body>
-  	
 
-<section>
-    
-    <p>Container with four columns:</p>
-    <code>container cols-4 | col-3</code>
-        
-    <div class="container cols-4 mb3 col-mb1">
+    <div class="container fullwidth cols-6 cols-xl-4 cols-sm-2 no-gutter-r align-horiz-c align-vert-b">
 	    
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    <div class="col-3">Flex Col</div>
-	    
-    </div>
-    
-    <p>Container with two columns:</p>
-    <code>container cols-2 | col-6</code>
-        
-    <div class="container cols-2 mb3 col-mb1">
-	    
-	    <div class="col-6">Flex Col</div>
-	    <div class="col-6">Flex Col</div>
-	    <div class="col-6">Flex Col</div>
-	    <div class="col-6">Flex Col</div>
-	    
+	    <div class="col align-horiz-l align-vert-c blue ">Col</div>
+	    <div class="col green">Col</div>
+	    <div class="col h25">Col</div>
+	    <div class="col">Col</div>
+	    <div class="col">Col</div>	    
+	    <div class="col">Col</div>	    
+	    <div class="col">Col</div>
+	    <div class="col blue">Col</div>	    
+	    <div class="col">Col</div>	 	    
+	    	    
     </div>
 
-
-    <p>Container with no gutter:</p>
-    <code>container no-gutter | col-4</code>
-        
-    <div class="container cols-3 no-gutter mb3">
-
-		<div class="col-4">Flex Col</div>
-		<div class="col-4">Flex Col</div>
-		<div class="col-4">Flex Col</div>
-                
-    </div>
-
-    <p>Container with 4/8 width:</p>    
-    <code>container | col-4 col-8</code>
-    
-    <div class="container mb3">
-        
-        <div class="col-4 blue">Flex Col</div>
-        
-        <div class="col-8 red">
-
-		    <div class="container cols-4 col-mb3">
-		
-		        <div class="col-3">Flex Col</div>
-		        <div class="col-3">Flex Col</div>
-		        <div class="col-3">Flex Col</div>
-		        <div class="col-3">Flex Col</div>
-		        <div class="col-3">Flex Col</div>    
-		                
-		    </div>
-
-        </div>
-                        
-    </div>
-
-    <p>Container with 4/8 width.  Only one column is rendered, which is aligned to center.</p>    
-    <code>container flex-center | col-4</code>
-    
-    <div class="container flex-center">
-        
-        <div class="col-4 blue">Flex Col</div>
-        
-        <!--<div class="col">
-            Flex Col
-        </div>-->
-                
-    </div>
-
-    <p>Container with breakpoint set to large:</p>
-    <code>container cols-1 cols-lg-4 | col-12 col-lg-3</code>
-        
-    <div class="container cols-1 cols-lg-4 mb3">
-
-        <div class="col-12 col-lg-3">Flex Col</div>
-        <div class="col-12 col-lg-3">Flex Col</div>
-        <div class="col-12 col-lg-3">Flex Col</div>
-        <div class="col-12 col-lg-3">Flex Col</div>
-                
-    </div>
-        
-    <p>Container with breakpoint set to small:</p>
-    <code>container cols-1 cols-sm-6 | col-12 col-sm-2</code>
-        
-    <div class="container cols-1 cols-sm-6 mb3">
-
-        <div class="col-12 col-sm-2">Flex Col</div>
-        <div class="col-12 col-sm-2">Flex Col</div>
-        <div class="col-12 col-sm-2">Flex Col</div>
-        <div class="col-12 col-sm-2">Flex Col</div>
-        <div class="col-12 col-sm-2">Flex Col</div>
-        <div class="col-12 col-sm-2">Flex Col</div>
-                
-    </div>
-	
-	<p>Container with vertical align:</p>
-    <code>container flex-v-center cols-1 | col-12</code>
-    
-    <div class="container cols-1 flex-v-center mb3 red" style="height:300px;">
-
-        <div class="col-12">Flex Col</div>
-        <div class="col-12">Flex Col</div>
-        
-    </div>
-    
-    <p>Container with self align:</p>
-    <code>container flex-v-center cols-1 | col-12</code>
-    
-    <div class="container cols-3 flex-direction-col mb10 red" style="height:100px;">
-
-        <div class="col-4 align-top blue">Flex Col</div>
-        <div class="col-4 align-top yellow">Flex Col</div>
-        <div class="col-4 align-bottom green">Flex Col</div>
-        
-    </div>
-    
-</section>
 </body>
 
 </html>

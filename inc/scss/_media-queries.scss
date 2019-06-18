@@ -1,5 +1,18 @@
 /*! == MEDIA QUERIES == */
 
+@each $name, $size in $breakpoints {
+	
+	@media (max-width: #{$size}) {
+		
+		@for $i from 1 through $col-count {
+			
+			.container.cols-#{$name}-#{$i} >div {
+				grid-column: span $i;
+			}
+		}
+	}
+}
+
 /*===========EXTRA LARGE (1600px)==========*/
 
 @media only screen and (max-width: 1600px) {
